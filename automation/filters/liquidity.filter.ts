@@ -38,6 +38,7 @@ export class LiquidityFilter implements IFilter {
 
       return burned;
     } catch (e: any) {
+      logger.error('BurnFluter -> Failed to check LP Info', e);
       logger.error({ mint: poolState.baseMint.toString(), lpMint: poolState.lpMint.toString() }, `Failed to get LP Info`);
     }
 

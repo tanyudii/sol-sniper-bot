@@ -37,6 +37,7 @@ export class PoolSizeFilter implements IFilter {
 
       return isInRange;
     } catch (e) {
+      logger.error('PoolSizeFilter -> Failed to check pool size', e);
       logger.error({ mint: poolState.baseMint.toString() }, `Failed to check pool size`)
     }
 

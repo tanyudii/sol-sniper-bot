@@ -47,6 +47,7 @@ export class MetadataFilter implements IFilter {
 
       return tests.every((passed) => passed === true);
     } catch (e) {
+      logger.error('MutableFilter -> Failed to check metadata', e);
       logger.error({ mint: poolState.baseMint.toString() }, `MutableFilter -> Failed to check metadata`);
     }
 

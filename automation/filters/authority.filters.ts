@@ -51,6 +51,7 @@ export class AuthorityFilter implements IFilter {
 
       return tests.every((passed) => passed === true);
     } catch (e: any) {
+      logger.error('AuthorityFilter -> Failed to check Mint Info', e);
       logger.error({ mint: poolState.baseMint.toString() }, `[AuthorityFilter] Failed to get AccountInfo`);
     }
 
