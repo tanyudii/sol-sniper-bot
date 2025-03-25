@@ -21,7 +21,7 @@ export class PoolSizeFilter implements IFilter {
         isInRange = poolSize.raw.lte(this.maxPoolSize.raw);
 
         if (!isInRange) {
-          // logger.error({ mint: poolState.baseMint.toString() }, `PoolSize -> Pool size ${poolSize.toFixed()} > Max Pool Size ${this.maxPoolSize.toFixed()}`);
+          logger.info({ mint: poolState.baseMint.toString() }, `PoolSize -> Pool size ${poolSize.toFixed()} > Max Pool Size ${this.maxPoolSize.toFixed()}`);
           return false;
         }
       }
@@ -30,7 +30,7 @@ export class PoolSizeFilter implements IFilter {
         isInRange = poolSize.raw.gte(this.minPoolSize.raw);
 
         if (!isInRange) {
-          // logger.error({ mint: poolState.baseMint.toString() }, `PoolSize -> Pool size ${poolSize.toFixed()} < Min Pool Size ${this.minPoolSize.toFixed()}`);
+          logger.info({ mint: poolState.baseMint.toString() }, `PoolSize -> Pool size ${poolSize.toFixed()} < Min Pool Size ${this.minPoolSize.toFixed()}`);
           return false;
         }
       }
