@@ -55,6 +55,7 @@ export class MetadataFilter implements IFilter {
   }
 
   private async hasSocials(metadata: MetadataAccountDataArgs): Promise<boolean> {
+    logger.info('Checking if metadata has socials', metadata);
     if (!metadata.uri) {
       return false;
     }
